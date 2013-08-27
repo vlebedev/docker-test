@@ -4,10 +4,6 @@ docker-test
 Run meteor app with hipache frontend and mongodb backend.
 All conponents are in their docker containers.
 
-
-Initialization
---------------
-
 ### MacOS X vagrant setup (skip if you are already on Linux)
 1. Install vagrant, see here: http://docs.vagrantup.com/v2/installation/
 1. Create ubuntu 12.04 virtual machine with docker pre-installed: run `vagrant up`
@@ -31,7 +27,7 @@ Initialization
 ### Run containers
 1. Go to `/vagrant/docker`
 1. Run `./run.sh`
-1. Pint your browser to http://test.local:8000 (on MacOS) or http://test.local (on ubuntu)
+1. Point your browser to http://test.local:8000 (on MacOS) or http://test.local (on ubuntu)
 
 TODO
 ----
