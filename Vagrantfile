@@ -13,7 +13,8 @@ Vagrant::Config.run do |config|
   config.vm.box = BOX_NAME
   config.vm.box_url = BOX_URI
   config.vm.forward_port 4243, 4243
-  config.vm.forward_port 8000, 8000
+  config.vm.forward_port 80, 8000
+  config.vm.forward_port 3000, 3000
 
   # Provision docker and new kernel if deployment was not done
   if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/default/*/id").empty?
