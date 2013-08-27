@@ -29,6 +29,14 @@ Initialization
 1. Edit /etc/hosts both on MacOS and ubuntu, add the following entry: `127.0.0.1    test.local`
 
 ### Run containers
-1.
+1. Go to `/vagrant/docker`
+1. Run `./run.sh`
+1. Pint your browser to http://test.local:8000 (on MacOS) or http://test.local (on ubuntu)
+
+TODO
+----
+
+1. Persistent volume for MongoDB containers
+1. Resolve problem with websockets when multiple app containers configured in Hipache
 
 

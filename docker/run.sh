@@ -32,9 +32,9 @@ METEOR_CONTAINER_1=$(sudo docker run -d -p 3000 -e PORT=3000 -e DISABLE_WEBSOCKE
 METEOR_PORT_1=$(sudo docker port $METEOR_CONTAINER_1 3000)
 METEOR_HOST_1=$BRIDGE_IP
 
-METEOR_CONTAINER_2=$(sudo docker run -d -p 3001 -e PORT=3001 -e DISABLE_WEBSOCKETS=YES -e MONGO_URL=mongodb://$MONGODB_HOST:$MONGODB_PORT test/meteor)
-METEOR_PORT_2=$(sudo docker port $METEOR_CONTAINER_2 3001)
-METEOR_HOST_2=$BRIDGE_IP
+# METEOR_CONTAINER_2=$(sudo docker run -d -p 3001 -e PORT=3001 -e DISABLE_WEBSOCKETS=YES -e MONGO_URL=mongodb://$MONGODB_HOST:$MONGODB_PORT test/meteor)
+# METEOR_PORT_2=$(sudo docker port $METEOR_CONTAINER_2 3001)
+# METEOR_HOST_2=$BRIDGE_IP
 
 
 echo Registering application instances in Hipache, please wait...
@@ -45,6 +45,6 @@ sleep 5
 #make sure the main hipache knows about our new http://test.local domain`
 redis-cli -h $REDIS_HOST -p $REDIS_PORT rpush frontend:test.local testlocal
 redis-cli -h $REDIS_HOST -p $REDIS_PORT rpush frontend:test.local http://$METEOR_HOST_1:$METEOR_PORT_1
-redis-cli -h $REDIS_HOST -p $REDIS_PORT rpush frontend:test.local http://$METEOR_HOST_2:$METEOR_PORT_2
+# redis-cli -h $REDIS_HOST -p $REDIS_PORT rpush frontend:test.local http://$METEOR_HOST_2:$METEOR_PORT_2
 
 echo Done.
