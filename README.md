@@ -1,8 +1,8 @@
 docker-test
 ===========
 
-Run meteor app with hipache frontend and mongodb backend.
-All conponents are in their docker containers.
+Run meteor app with hipache frontend and mongodb backend.  All conponents are in their docker containers. Note multiple meteor servers behind hipache!
+
 
 ### MacOS X vagrant setup (skip if you are already on Linux)
 1. Install vagrant, see here: http://docs.vagrantup.com/v2/installation/
@@ -33,10 +33,4 @@ All conponents are in their docker containers.
 1. Go to `/vagrant/docker`
 1. Run `./run.sh`
 1. Point your browser to http://test.local:8000 (on MacOS) or http://test.local (on ubuntu)
-
-TODO
-----
-
-1. Resolve problem with websockets when multiple app containers configured in Hipache
-
 
