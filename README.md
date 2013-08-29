@@ -18,8 +18,13 @@ All conponents are in their docker containers.
 ### Build docker images
 1. Go to shared directory: `cd /vagrant`, this directory is shared between MacOS and ubuntu
 1. Go to docker files directory: `cd docker`
-1. Run build script: `./buildimages.sh`
+1. Build docker images: `./buildimages.sh`
 1. Check if all three images (test/hipache, test/mongodb, test/meteor) are generated: `sudo docker images`
+
+### Build and mount mongodb data file
+1. Create a directory out of the /vagrant tree, i.e.: `sudo mkdir /data; sudo chown vagrant.vagrant /data`
+1. Create subdirectories: `mkdir /data/files; mkdir /data/db; mkdir /data/db/testdb`
+1. To init a file for database volume and mount it on /data/db/testdb run this script: `./builddbvolume.sh`
 
 ### Edit /etc/hosts
 1. Edit /etc/hosts both on MacOS and ubuntu, add the following entry: `127.0.0.1    test.local`
@@ -32,7 +37,6 @@ All conponents are in their docker containers.
 TODO
 ----
 
-1. Persistent volume for MongoDB containers
 1. Resolve problem with websockets when multiple app containers configured in Hipache
 
 

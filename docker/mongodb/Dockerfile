@@ -8,7 +8,6 @@ RUN apt-get update
 RUN apt-get -y install apt-utils
 RUN apt-get -y install mongodb-10gen
 
-#RUN echo "" >> /etc/mongodb.conf
+CMD /usr/bin/mongod --config /etc/mongodb.conf --dbpath $DATA_DIR $OPTS
 
-CMD ["/usr/bin/mongod", "--config", "/etc/mongodb.conf"]
 

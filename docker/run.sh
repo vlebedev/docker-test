@@ -21,7 +21,7 @@ REDIS_HOST=$BRIDGE_IP
 echo Starting MongoDB container...
 
 #run the mongodb container
-MONGODB_CONTAINER=$(sudo docker run -d -p 27017 test/mongodb)
+MONGODB_CONTAINER=$(sudo docker run -d -v=/data/db/testdb:/tmp/data -e DATA_DIR=/tmp/data -e OPTS="--smallfiles" -p 27017 test/mongodb)
 MONGODB_PORT=$(sudo docker port $MONGODB_CONTAINER 27017)
 MONGODB_HOST=$BRIDGE_IP
 

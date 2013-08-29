@@ -6,6 +6,6 @@ run     wget -O /tmp/node.tar.gz http://nodejs.org/dist/v0.10.16/node-v0.10.16-l
 run     tar -C /usr/local/ --strip-components=1 -zxvf /tmp/node.tar.gz
 run     rm /tmp/node.tar.gz
 add     ./bundle.tgz .
-run	cd bundle/programs/server; npm uninstall fibers; npm install fibers
+run	    cd bundle/programs/server; npm uninstall fibers; npm install fibers
 cmd     ["node", "bundle/main.js"]
 
